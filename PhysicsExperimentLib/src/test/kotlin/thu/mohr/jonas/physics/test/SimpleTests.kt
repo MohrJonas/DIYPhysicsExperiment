@@ -8,7 +8,7 @@ import thu.mohr.jonas.physics.ValueRelationType
 import kotlin.test.assertFalse
 import kotlin.test.assertTrue
 
-class Tests {
+class SimpleTests {
 
     private val testPattern = ValuePattern(ValuePatternPart(ValueRelationType.ASCENDING, 2, 4, 1.0, 3.0))
 
@@ -88,7 +88,7 @@ class Tests {
 
     @Test
     fun failMatchAlmostTooMany() {
-        assertFalse {
+        assertTrue {
             testPattern.matches(
                 listOf(
                     ValueRelation(1.0, 3.0), ValueRelation(3.0, 5.0), ValueRelation(5.0, 7.0), ValueRelation(7.0, 9.0)
@@ -127,7 +127,7 @@ class Tests {
             testPattern.matches(
                 listOf(
                     ValueRelation(1.0, 2.0),
-                    ValueRelation(3.0, 5.0),
+                    ValueRelation(3.0, 5.0)
                 )
             )
         }
@@ -174,6 +174,14 @@ class Tests {
                     ValueRelation(40.0, 42.0), ValueRelation(1.0, 40.0)
                 )
             )
+        }
+    }
+
+    @Test
+    fun matchDualPattern() {
+        assertTrue {
+            val pattern = ValuePattern(ValuePatternPart(ValueRelationType.ASCENDING, 1, Int.MAX_VALUE, 0.1, Double.MAX_VALUE), ValuePatternPart(ValueRelationType.DESCENDING, 1, Int.MAX_VALUE, 0.1, Double.MAX_VALUE))
+            pattern.matches(listOf(ValueRelation(-0.754181385, 0.1890258789), ValueRelation(0.6103625298, -0.9297914505)))
         }
     }
 }
