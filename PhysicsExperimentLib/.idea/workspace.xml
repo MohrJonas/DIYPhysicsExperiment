@@ -5,16 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2a2729e6-8784-46f1-8dfa-a902de1bc353" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/thu/mohr/jonas/physics/test/MultiTest.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Calculations.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../Calculations.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/codestream.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codestream.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/3/03fb0a1b2c80931b90a6de6ad58bb5ec99c5250a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/8/2844bc7dc5edb41602da12ee727684b0e474669d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/3/4376d08884c4255f5ae5f987753c62fadc8b848d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/4/442292b8a7efeabbe4cc176709b833b1792140ec" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/b/bb684d685490a35b69056cb1a11055920b0bc2b1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/e/bed68e17a961bf86ed981e17e1a31e848cc18e80" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/7/c772d28f5e4ab620b28cc6d587942f30c5607e7b" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/thu/mohr/jonas/physics/ValuePattern.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/thu/mohr/jonas/physics/ValuePattern.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/thu/mohr/jonas/physics/ValuePatternPart.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/thu/mohr/jonas/physics/ValuePatternPart.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/thu/mohr/jonas/physics/ValueRelation.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/thu/mohr/jonas/physics/ValueRelation.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/thu/mohr/jonas/physics/test/Tests.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/thu/mohr/jonas/physics/test/SimpleTests.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/Calculations_cell_2_output_0.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/../images/Calculations_cell_2_output_0.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../poster/poster.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/../poster/poster.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../poster/poster.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../poster/poster.tex" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +78,7 @@
       <command value="mvn compile install" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.SimpleTests.idk">
+  <component name="RunManager" selected="JUnit.SimpleTests">
     <configuration name="SimpleTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="consoleApp" />
       <target name="WSL" />
@@ -165,8 +169,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.SimpleTests.idk" />
         <item itemvalue="JUnit.SimpleTests" />
+        <item itemvalue="JUnit.SimpleTests.idk" />
         <item itemvalue="JUnit.SimpleTests.failMatchAlmostTooSmallDiff" />
         <item itemvalue="JUnit.SimpleTests.failMatchEmpty" />
         <item itemvalue="JUnit.SimpleTests.matchJustEnough" />
@@ -188,6 +192,7 @@
       <workItem from="1656277351599" duration="700000" />
       <workItem from="1656278884271" duration="1191000" />
       <workItem from="1656280165003" duration="3144000" />
+      <workItem from="1656442895051" duration="1341000" />
     </task>
     <servers />
   </component>
