@@ -1,4 +1,0 @@
-[ZoneTransfer]
-ZoneId=3
-ReferrerUrl=https://www.qrcode-generator.de/
-HostUrl=https://api.qr-code-generator.com/v1/create?access-token=EBephxedmZHs9OWzR2Kbv-125ifulLI1LemyW4NO2hwWifAzpHadEVcOq-OkFtNz&qr_code_pattern=rounded-2&frame_name=no-frame&frame_color=%23000000&foreground_color=%23000000&background_color=%23FFFFFF&qr_code_logo=&marker_left_template=version1&marker_right_template=version1&marker_bottom_template=version1&qr_code_text=https%3A%2F%2Fgithub.com%2FMohrJonas%2FDIYPhysicsExperiment&frame_text=Scan%20me&frame_icon_name=mobile&image_format=PNG&image_width=300&download=1
