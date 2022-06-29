@@ -51,7 +51,7 @@
 \begin{multicols*}{3}
    \section*{Vorgehen}
    Mithilfe der \emph{Phyphox}-App wird die Beschleunigung in x, y und z-Richtung während einer Autofahrt aufgenommen.\\
-   Anschließend werden die aufgenommen Daten programmatisch ausgewertet.
+   Anschließend werden die aufgenommen Daten vollautomatisiert ausgewertet.
    \begin{center}
       \captionsetup{justification=centering}
       \begin{tikzpicture}
@@ -70,8 +70,8 @@
       \label{fig:sensor_alignment}
    \end{center}
    \section*{Auswertung}
-   Die Auswertung erfolgt über eine selbst entwickeltes Anwendung. Zu Beginn werden die Daten in CSV-Format (Comma separated value) eingelesen.\\
-   Anschließend werden die Rohdaten in sog. \emph{ValueRelation}s überführt. Dabei handelt es sich um Beziehungen zwischen zwei aufeinanderfolgende Werten aus Phyphox.
+   Die Auswertung erfolgt über eine selbst entwickelte Anwendung. Zu Beginn werden die Daten im CSV-Format (Comma separated value) eingelesen.\\
+   Anschließend werden die Rohdaten in sog. \emph{ValueRelation}s überführt. Dabei handelt es sich um Beziehungen zwischen zwei aufeinanderfolgende Werte aus Phyphox.
    Diese Relationen enthalten Daten, etwa die zwei originalen Werte, die Differenz deren und ob der Wert ansteigt, abfällt oder gleich bleibt.\\
    \begin{center}
       \captionsetup{justification=centering}
@@ -126,7 +126,7 @@ ValuePattern(
    Hier entspricht jeder Punkt einer Kurve.
    \vfill\null
    \columnbreak
-   \subsection*{Starkes Beschleunigen / Bremsen Erkennung}
+   \subsection*{Erkennung starke Beschleunigen / starkes Abbremsen}
    Um ein starkes Beschleunigen / Abbremsen festzustellen werden die Daten in y-Richtung betrachtet. Dabei wird nach kurzen, starken Ausschlägen gefiltert:
    \includegraphics[width=\linewidth]{../images/Calculations_cell_8_output_0}
    Jeder Punkt hier entspricht einer Beschleunigung / einem Bremsen\\ von $<=4m/s^{2}$
