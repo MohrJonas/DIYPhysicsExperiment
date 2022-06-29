@@ -50,18 +50,37 @@
 \end{center}
 \begin{multicols*}{3}
    \section*{Vorgehen}
-   Mithilfe der \emph{Phyphox}-App wird die Beschleunigung in x,y und z-Richtung während einer Autofahrt aufgenommen.\\
+   Mithilfe der \emph{Phyphox}-App wird die Beschleunigung in x, y und z-Richtung während einer Autofahrt aufgenommen.\\
    Anschließend werden die aufgenommen Daten programmatisch ausgewertet.
-   \section*{Auswertung}
-   Die Auswertung erfolgt über eine selbst entwickeltes Anwendung. Zu Beginn werden die Daten in CSV-Format (Comma separated value) eingelesen.\\
-   Anschließend werden die Rohdaten in sog. \emph{ValueRelation}s überführt. Dabei handelt es sich um eine Relation zwischen zwei Werten aus Phyphox.
-   Diese Relationen enthalten Daten, wie die zwei originalen Werte, die Differenz deren und ob der Wert ansteigt, abfällt oder gleich bleibt.\\
    \begin{center}
       \captionsetup{justification=centering}
-      \begin{tabular}{ c | c | c | c | c | c | c }
+      \begin{tikzpicture}
+         \draw (0, 0) rectangle ++(1, 2);
+         \draw (0.1, 1.3) rectangle ++(0.8, 0.3);
+         \draw (0, 1.2) to (1, 1.2);
+         \draw (0, 0.5) to (1, 0.5);
+         \draw[color=blue][->][thick] (0.5, 1) to (0.5, 2.5);
+         \node[color=blue] (Y) at (0.5, 2.7) {$y$};
+         \draw[color=green][->][thick] (0.5, 1) to (2, 1);
+         \node[color=green] (X) at (2.2, 1) {$x$};
+         \draw[color=red][fill=red] (0.5, 1) ellipse (0.1 and 0.1);
+         \node[color=red] (Z) at (0.2, 0.8) {$z$};
+      \end{tikzpicture}
+      \captionof{figure}{Sensor Ausrichtung im Auto}
+      \label{fig:sensor_alignment}
+   \end{center}
+   \section*{Auswertung}
+   Die Auswertung erfolgt über eine selbst entwickeltes Anwendung. Zu Beginn werden die Daten in CSV-Format (Comma separated value) eingelesen.\\
+   Anschließend werden die Rohdaten in sog. \emph{ValueRelation}s überführt. Dabei handelt es sich um Beziehungen zwischen zwei aufeinanderfolgende Werten aus Phyphox.
+   Diese Relationen enthalten Daten, etwa die zwei originalen Werte, die Differenz deren und ob der Wert ansteigt, abfällt oder gleich bleibt.\\
+   \begin{center}
+      \captionsetup{justification=centering}
+      \begin{tabular}{ |c | c | c | c | c | c | }
+         \hline
          relation & first & second & diff & firstTime & secondTime \\
          \hline
          ASC      & 0.5   & 1.2    & 0.7  & 0.02      & 0.05       \\
+         \hline
       \end{tabular}
       \captionof{figure}{Beispielhafte ValueRelation}
       \label{fig:sample_ValueRelation}
@@ -79,7 +98,7 @@ ValuePattern(
 )
         \end{lstlisting}
    In diesem Beispiel wird ein Muster definiert, welches zwischen $2$ und $2147483647$ (Int.MAX\_VALUE) ansteigende Datenpunkte
-   mit einer Steigung zwischen $0.5$ und $1.7*10^{308}$ (Double.MAX\_VALUE) akzeptiert\\
+   mit einer Steigung zwischen $0.5$ und $1.7*10^{308}$ (Double.MAX\_VALUE) akzeptiert.\\
    \begin{center}
       \captionsetup{justification=centering}
       \begin{tikzpicture}
@@ -97,31 +116,37 @@ ValuePattern(
    Die hier betrachtete Autofahrt dauerte $\thicksim$ 18 Minuten.\\
    Die Rohdaten sehen wie folgt aus:\\
    \begin{center}
-      \includegraphics[width=\linewidth]{../images/Calculations_cell_2_output_0}
-      \includegraphics[width=\linewidth]{../images/Calculations_cell_3_output_0}
+      \includegraphics[width=0.9\linewidth]{../images/Calculations_cell_2_output_0}
+      \includegraphics[width=0.9\linewidth]{../images/Calculations_cell_3_output_0}
+      \includegraphics[width=0.9\linewidth]{../images/Calculations_cell_4_output_0}
    \end{center}
    \subsection*{Kurvenerkennung}
    Um Kurven zu erkennen wird die Beschleunigung in x-Richtung betrachtete. Nach Anwendung des passenden Musters ergibt sich foldendes Bild:
-   \includegraphics[width=\linewidth]{../images/Calculations_cell_7_output_1}
-   Hier entspricht jeder Punkt einer gefahrenen Kurve.
+   \includegraphics[width=\linewidth]{../images/Calculations_cell_7_output_0}
+   Hier entspricht jeder Punkt einer Kurve.
    \vfill\null
    \columnbreak
-   \subsection*{Abruptes Beschleunigen / Bremsen Erkennung}
-   Um ein abruptes Beschleunigen / Abbremsen festzustellen werden die Daten in y-Richtung betrachtet. Dabei wird nach kurzen, starken Anstiegen gefiltert:
+   \subsection*{Starkes Beschleunigen / Bremsen Erkennung}
+   Um ein starkes Beschleunigen / Abbremsen festzustellen werden die Daten in y-Richtung betrachtet. Dabei wird nach kurzen, starken Ausschlägen gefiltert:
    \includegraphics[width=\linewidth]{../images/Calculations_cell_8_output_0}
-   Jeder Punkt hier entspricht einer Beschleunigung / Bremsen  $<=4m/s^{2}$
+   Jeder Punkt hier entspricht einer Beschleunigung / einem Bremsen\\ von $<=4m/s^{2}$
    \section*{Technisches}
-   Die Software ist in \emph{Kotlin} realisiert, einer Java-ähnlichen Sprache, die auch auf der \emph{JVM} (Java Virtual Machine) läuft.\\ 
+   Die Software ist in \emph{Kotlin} realisiert, einer Java-ähnlichen Sprache, die auch auf der \emph{JVM} (Java Virtual Machine) läuft.\\
    Also Buildsystem dient \emph{Make} und \emph{Maven}. \\
    Zum einlesen und verarbeiten der Rohdaten dient die Library \emph{krangl}, zur Visualisierung \emph{kravis}\\
    Also Frontend für die Daten dient \emph{Jupyter notebook} mit dem \emph{Kotlin kernel}. \\
    Als IDE kommt \emph{IntelliJ Ultimate} zum Einsatz.\\
-   Git wurde zur \emph{Versionsverwaltung} verwendet.\\
+   \emph{Git} wurde zur Versionsverwaltung verwendet.\\
    Das Plakat wurde in \emph{\LaTeX} erstellt.\\
-   Die Diagramme wurden aus \emph{Jupyter notebook} exportiert.\\
+   Alle Diagramme wurden aus \emph{Jupyter notebook} exportiert.\\
    Bilder wurden mit \emph{Tikz} gezeichnet.\\
-   Das volle Projekt inklusiv Rohdaten, Sourcecode für das Programm und Poster und Bilder sind unter https://github.com/MohrJonas/DIYPhysicsExperiment verfügbar.\\
-   Scannbarer QR-Code:\\
-   \includegraphics[scale=.5]{../images/qr_code}
+   Das volle Projekt inklusiv Rohdaten, Sourcecode für das Programm und Poster und Bilder sind unter https://github.com/MohrJonas/DIYPhysicsExperiment verfügbar:\\
+   \vspace*{3px}
+   \begin{center}
+      \captionsetup{justification=centering}
+      \includegraphics[scale=0.3]{../images/qr_code}
+      \captionof{figure}{Scannbarer QR-Code}
+      \label{fig:qr_code}
+   \end{center}
 \end{multicols*}
 \end{document}

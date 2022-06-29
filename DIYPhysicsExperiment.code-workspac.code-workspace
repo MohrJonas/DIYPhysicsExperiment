@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"name": "DIYPhysicsExperiment",
+			"path": "."
+		}
+	],
+	"settings": {
+		"makefile.extensionOutputFolder": "./.vscode",
+		"cSpell.language": "en,de-DE",
+		"cSpell.words": [
+			"Phyphox"
+		]
+	}
+}

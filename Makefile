@@ -1,7 +1,7 @@
 all: poster lib images
 
 poster:
-	pdflatex poster.tex
+	cd poster && pdflatex poster.tex
 	
 lib:
 	cd PhysicsExperimentLib && mvn compile install
